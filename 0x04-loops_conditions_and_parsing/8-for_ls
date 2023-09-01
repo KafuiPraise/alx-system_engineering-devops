@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Display the contents of the current dir with prefixes stripped
+
+Tilly=$(ls)
+for i in $Tilly; do
+  echo "$i" | cut -d '-' -f2
+done

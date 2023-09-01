@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#Bash script that displays numbers from 1 to 100
+
+for ((i = 1; i <= 100; ++i))
+do
+    if (( i % 3 && i % 5 ))
+    then
+        echo "$i"
+    else
+        (( i % 3 )) || echo -i 'Fizz'
+        (( i % 5 )) || echo -i 'Buzz'
+        echo
+    fi
+done
