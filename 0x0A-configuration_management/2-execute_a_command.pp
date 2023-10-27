@@ -1,6 +1,6 @@
-# Killing a process named Killmenow
+# Kill a process
 #
-# exec {'kill_killmenow_process':
-#   command  => 'pkill killmenow',
-#     provider => 'shell'
+# exec { 'pkill killmenow':
+#   path    => '/usr/sbin:/usr/bin:/sbin:/bin',
+#     returns => [0, 1],
 #     }
