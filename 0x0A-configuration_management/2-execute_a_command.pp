@@ -1,11 +1,6 @@
-#!/usr/bin/pup
-## Installing flask from pip3
+# Killing a process named Killmenow
 #
-#package { 'flask':
-#ensure   => '2.1.0',
-#provider => 'pip3',
-#}
-#
-#package {'werkzeug':
-#ensure   => '3.0.1',
-#provider => 'pip3',}
+# exec {'kill_killmenow_process':
+#   command  => 'pkill killmenow',
+#     provider => 'shell'
+#     }
