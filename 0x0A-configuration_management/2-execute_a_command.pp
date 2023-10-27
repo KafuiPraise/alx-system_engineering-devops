@@ -1,6 +1,6 @@
-# Kill a process
+#Killing a process
 
- exec { 'pkill killmenow':
-   path    => '/usr/sbin:/usr/bin:/sbin:/bin',
-     returns => [0, 1],
-     }
+exec {'kill_killmenow_process':
+  command  => 'pkill killmenow',
+  provider => 'shell'
+}i
