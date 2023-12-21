@@ -50,6 +50,8 @@ server {
 	rewrite ^/redirect_me https://github.com/KafuiPraise permanent;
 
 	location / {
+		proxy_pass http://127.0.0.1:5003/2-hbnb;
+      		add_header X-Served-By 397719-web-01;
 		# First attempt to serve request as file, then
 		# as directory, then fall back to displaying a 404.
 		try_files $uri $uri/ =404;
@@ -68,8 +70,8 @@ server {
         proxy_pass http://127.0.0.1:5002/api/;
 	}
 	location /static {
-        proxy_pass http://127.0.0.1:5003;
-    	}
+	 alias /AirBnB_clone_v4/web_dynamic/static/;
+	}
 	# pass PHP scripts to FastCGI server
 	#
 	#location ~ \.php$ {
@@ -108,4 +110,3 @@ server {
 #		try_files $uri $uri/ =404;
 #	}
 #}
-add_header X-Served-By 397719-web-01;
